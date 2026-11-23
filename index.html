@@ -1,213 +1,219 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Sadaa ❤️</title>
+<title>Sadaa's Little Love World 💗</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Georgia,serif;
+text-align:center;
+color:#873d65;
+background:linear-gradient(135deg,#ffe4ef,#f1e4ff,#fff1f5);
+overflow-x:hidden;
 }
-
-body {
-  background: linear-gradient(135deg, #ffe0ec, #ffc1d9, #fff0f5);
-  font-family: Georgia, serif;
-  text-align: center;
-  color: #8b3155;
-  overflow-x: hidden;
+header{padding:55px 15px 25px}
+h1{font-size:35px;color:#d34d88}
+h2{color:#d34d88}
+p{line-height:1.8}
+.card{
+background:rgba(255,255,255,.8);
+border-radius:25px;
+padding:25px 18px;
+margin:25px auto;
+max-width:450px;
+width:90%;
+box-shadow:0 8px 25px #d88caf40;
 }
-
-.container {
-  padding: 55px 20px;
-  min-height: 100vh;
+button{
+border:0;
+border-radius:30px;
+background:#e879a6;
+color:white;
+padding:13px 22px;
+font-size:16px;
+margin:10px;
+cursor:pointer;
 }
-
-h1 {
-  font-size: 35px;
-  margin: 25px 0;
+button:active{transform:scale(.95)}
+.reason{
+background:#fff0f6;
+padding:12px;
+border-radius:15px;
+margin:10px 0;
 }
-
-.subtitle {
-  font-size: 17px;
-  margin-bottom: 30px;
+.hidden{display:none}
+.big{font-size:55px}
+footer{padding:30px}
+.floating{
+position:fixed;
+top:-30px;
+pointer-events:none;
+animation:fall linear forwards;
+z-index:5;
 }
-
-.box {
-  background: rgba(255,255,255,0.75);
-  padding: 25px;
-  border-radius: 25px;
-  max-width: 450px;
-  margin: 25px auto;
-  box-shadow: 0 5px 25px #d77a9b55;
-}
-
-h2 {
-  margin-bottom: 15px;
-}
-
-p {
-  line-height: 1.8;
-  font-size: 17px;
-}
-
-button {
-  background: #e75480;
-  color: white;
-  border: none;
-  padding: 14px 25px;
-  border-radius: 30px;
-  font-size: 16px;
-  margin: 15px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #c93668;
-}
-
-.compliment {
-  margin: 15px 0;
-  padding: 15px;
-  background: #fff0f5;
-  border-radius: 15px;
-  color: #a02d59;
-}
-
-#surprise {
-  display: none;
-  margin-top: 20px;
-}
-
-.heart {
-  position: fixed;
-  top: -20px;
-  animation: fall linear infinite;
-  pointer-events: none;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-footer {
-  margin: 40px 0 20px;
-  font-size: 14px;
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg);opacity:0}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+<div class="big">🎀🦋</div>
+<h1>Sadaa's Little Love World</h1>
+<p>A tiny universe made only for my favourite girl ❤️</p>
+<p>୨ৎ Made with love by Talha ୨ৎ</p>
+</header>
 
-<h1>For My Sadaa ❤️</h1>
-
-<p class="subtitle">
-A little world made only for you, my favourite girl. 🥹
-</p>
-
-<div class="box">
-<h2>Dear Sadaa 🌷</h2>
-
+<section class="card">
+<div class="big">🧸</div>
+<h2>Welcome, My Sadaa!</h2>
 <p>
-You are not just a person in my life.
-You are my favourite feeling,
-my sweetest thought and my little happiness.
-<br><br>
-I know I am not perfect,
-but my love for you is something
-I always want to show through my actions.
+Hey my little princess! 🥹<br>
+I made this tiny world just for you.
+I hope every little thing here makes you smile.
+You deserve all the happiness in this world. 💗
 </p>
-</div>
+</section>
 
-<div class="box">
-<h2>Things I Love About You 💗</h2>
+<section class="card">
+<h2>🎀 20 Reasons I Love You</h2>
+<div id="reasons"></div>
+</section>
 
-<div class="compliment">Your beautiful smile 🌸</div>
-<div class="compliment">Your innocent little heart 🥹</div>
-<div class="compliment">Your cute angry face 😂</div>
-<div class="compliment">Your football skills ⚽</div>
-<div class="compliment">Your intelligence 📚</div>
-<div class="compliment">The way you make my world special ❤️</div>
-<div class="compliment">Simply being YOU. 🦋</div>
-</div>
-
-<div class="box">
-<h2>A Little Promise 💌</h2>
-
+<section class="card">
+<div class="big">💌</div>
+<h2>Open When You Miss Me</h2>
+<button onclick="reveal('miss')">Open your letter 💗</button>
+<div id="miss" class="hidden">
 <p>
-I don't want to love you only with words.
-I want to make you feel loved through
-my efforts, patience, honesty and actions.
-<br><br>
-You deserve happiness, respect
-and a love that never makes you question
-your worth.
+If you are missing me right now,
+imagine me giving you the biggest hug.
+Distance or silence can never change
+how special you are to me.
+I wish I could be beside you right now.
+Sending you endless hugs and kisses. 🥹❤️
 </p>
 </div>
+</section>
 
-<div class="box">
-<h2>One Last Surprise 🥺</h2>
+<section class="card">
+<div class="big">🌷</div>
+<h2>A Flower Just For You</h2>
+<p>Because even flowers are jealous of your beauty. 🌸</p>
+<button onclick="reveal('flower')">Receive your flowers</button>
+<div id="flower" class="hidden">
+<div class="big">💐🌷🌸🌹💐</div>
+<p>A little bouquet for my favourite girl!</p>
+</div>
+</section>
 
-<p>There is something I want you to read...</p>
+<section class="card">
+<div class="big">🫂</div>
+<h2>Your Virtual Hug</h2>
+<p>Need a hug? Here is one from me!</p>
+<button onclick="hug()">Tap for a hug 🥹</button>
+<div id="hug" class="hidden">
+<div class="big">🧸🫂❤️</div>
+<p>Biggest hug from your Talha!</p>
+</div>
+</section>
 
-<button onclick="showLove()">
-Open Your Surprise ❤️
-</button>
+<section class="card">
+<div class="big">🐻</div>
+<h2>A Teddy For You</h2>
+<button onclick="reveal('teddy')">Give me my teddy!</button>
+<div id="teddy" class="hidden">
+<div class="big">🧸💗</div>
+<p>This teddy will remind you that someone loves you a lot!</p>
+</div>
+</section>
 
-<div id="surprise">
-<h2>My Masoom Girl 🥹</h2>
+<section class="card">
+<div class="big">💍</div>
+<h2>One Little Question...</h2>
+<p>Will you stay my favourite person forever?</p>
+<button onclick="yes()">YES! ❤️</button>
+<button onclick="yes()">Of course! 🥹</button>
+<div id="answer" class="hidden">
+<h2>YAYYYYY! 🥹💗</h2>
+<p>Here's to more smiles, memories and beautiful days together!</p>
+</div>
+</section>
+
+<section class="card">
+<h2>My Promise To You 💗</h2>
 <p>
-No matter how many beautiful things
-I see in this world,
-nothing will ever replace the happiness
-of seeing you smile.
+I don't want to show my love only through words.
+I want to show it through patience, honesty,
+respect and little efforts every day.
+You are special to me, Sadaa.
+And I hope I keep making you feel that way.
 <br><br>
-I choose you, Sadaa.
-Not just today, but every day.
-<br><br>
-I LOVE YOU SO MUCH! ❤️
-<br><br>
-Forever your Talha. 🫶🏻
+Forever your Talha. ❤️
 </p>
-</div>
-</div>
+</section>
 
 <footer>
-Made with endless love for Sadiiiee ❤️
-<br>
-— Talha
+Made with endless love for Sadiiiee 🎀<br>
+୨ৎ Talha ❤️ Sadaa ୨ৎ
 </footer>
 
-</div>
-
 <script>
-function showLove() {
-  document.getElementById("surprise").style.display = "block";
+const list=[
+"Your beautiful smile 🌸",
+"Your cute angry face 😂",
+"Your innocent heart 🥹",
+"Your caring nature 💗",
+"Your football skills ⚽",
+"Your intelligence 📚",
+"The way you laugh 😭",
+"Your beautiful eyes 👀",
+"Your little habits 🎀",
+"Your love for dosa 🥞",
+"Your pav bhaji obsession 😂",
+"The way you teach me English 📖",
+"Your determination ✨",
+"Your kindness 🌷",
+"Your cute voice 💕",
+"The way you make me smile",
+"Your hardworking nature",
+"Your presence in my life",
+"Simply because you are YOU",
+"And a million more reasons ❤️"
+];
+
+document.getElementById("reasons").innerHTML=
+list.map((r,i)=>`<div class="reason">${i+1}. ${r}</div>`).join("");
+
+function reveal(id){
+document.getElementById(id).style.display="block";
 }
-
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (3 + Math.random() * 4) + "s";
-  heart.style.fontSize = (12 + Math.random() * 20) + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 7000);
+function hug(){
+reveal('hug');
 }
-
-setInterval(createHeart, 400);
+function yes(){
+reveal('answer');
+}
+function floating(){
+let el=document.createElement("div");
+el.className="floating";
+el.innerHTML=["💗","💕","🦋","🌸","✨"][Math.floor(Math.random()*5)];
+el.style.left=Math.random()*100+"vw";
+el.style.fontSize=(15+Math.random()*20)+"px";
+el.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(el);
+setTimeout(()=>el.remove(),8000);
+}
+setInterval(floating,450);
 </script>
 
 </body>
 </html>
+```
