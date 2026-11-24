@@ -3,355 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Sadaa Awards 2026</title>
+<title>A Little Promise For Sadaa ❤️</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Georgia,serif;
-background:radial-gradient(circle,#332044,#100b19);
-color:white;
-text-align:center;
-min-height:100vh;
-overflow-x:hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.screen{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:25px;
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg,#ffe1ec,#fff0f5,#f8d9e8);
+    color: #713b50;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-h1{
-color:#ffd982;
-font-size:38px;
-text-shadow:0 0 20px #ffbd59;
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px 20px;
 }
 
-h2{color:#ffdc94}
-
-p{
-font-size:17px;
-line-height:1.7;
+.heart {
+    font-size: 55px;
+    animation: beat 1s infinite;
 }
 
-button{
-background:linear-gradient(45deg,#d99a35,#ffe5a3);
-color:#321d16;
-border:0;
-padding:14px 30px;
-border-radius:30px;
-font-size:16px;
-font-weight:bold;
-margin:12px;
-cursor:pointer;
-box-shadow:0 0 20px #e9ae55;
+@keyframes beat {
+    50% { transform: scale(1.2); }
 }
 
-button:active{transform:scale(.94)}
-
-#awardScreen{display:none}
-
-.trophy{
-font-size:95px;
-animation:float 2s infinite ease-in-out;
-filter:drop-shadow(0 0 20px gold);
+h1 {
+    font-size: 34px;
+    margin: 20px 0;
+    color: #bd547a;
 }
 
-@keyframes float{
-50%{transform:translateY(-15px)}
+h2 {
+    margin-bottom: 15px;
+    color: #bd547a;
 }
 
-.card{
-background:#ffffff12;
-border:1px solid #ffdb9a66;
-border-radius:25px;
-padding:30px 20px;
-max-width:440px;
-width:100%;
-box-shadow:0 0 30px #ffbd5920;
+p {
+    line-height: 1.8;
+    font-size: 17px;
 }
 
-.number{
-color:#ffd982;
-letter-spacing:4px;
-font-size:13px;
+.card {
+    background: rgba(255,255,255,.75);
+    padding: 25px;
+    border-radius: 22px;
+    margin: 25px 0;
+    box-shadow: 0 5px 20px #d88da755;
 }
 
-#awardTitle{
-font-size:29px;
-margin:20px 0;
-color:#ffdc94;
+button {
+    background: #d66b91;
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin: 12px;
+    cursor: pointer;
 }
 
-#awardText{
-min-height:100px;
+button:hover {
+    background: #b94d76;
 }
 
-#confetti{
-position:fixed;
-inset:0;
-pointer-events:none;
-overflow:hidden;
+.hidden {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.8;
 }
 
-.piece{
-position:absolute;
-top:-20px;
-font-size:20px;
-animation:fall 4s linear forwards;
+footer {
+    padding: 30px;
+    font-size: 14px;
 }
 
-@keyframes fall{
-to{transform:translateY(110vh) rotate(720deg);opacity:0}
+.floating {
+    position: fixed;
+    bottom: -20px;
+    animation: floatUp 6s linear infinite;
+    pointer-events: none;
 }
 
-.hidden{display:none!important}
-
-footer{
-color:#d8bca0;
-font-size:13px;
-margin-top:25px;
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div id="confetti"></div>
+<div class="container">
 
-<!-- OPENING -->
+<div class="heart">❤️</div>
 
-<section class="screen" id="intro">
+<h1>A Little Promise For Sadaa</h1>
 
-<div class="trophy">🏆</div>
-
-<h1>THE SADAA AWARDS</h1>
-
-<h2>2026 EDITION</h2>
-
-<p>
-Tonight is not an ordinary night.<br>
-Tonight, someone very special<br>
-deserves to be celebrated.
-</p>
-
-<p style="color:#ffd982">
-And that someone is YOU, Sadaa. ❤️
-</p>
-
-<button onclick="start()">START THE CEREMONY ✨</button>
-
-<footer>Presented with love by Talha</footer>
-
-</section>
-
-
-<!-- AWARDS -->
-
-<section class="screen" id="awardScreen">
+<p>Made with love, honesty and a heart that wants to do better.</p>
 
 <div class="card">
+<h2>Dear Sadaa, 🌷</h2>
 
-<div class="number" id="number">AWARD 01 / 07</div>
-
-<div class="trophy" id="icon">👑</div>
-
-<h2>THE WINNER IS...</h2>
-
-<h1 style="font-size:30px">SADAA ❤️</h1>
-
-<h2 id="awardTitle">Queen of My World</h2>
-
-<p id="awardText">
-The girl who deserves her own crown.
+<p>
+I know there are moments from the past that still hurt you.
+I know saying sorry cannot erase those memories.
+And I don't expect you to suddenly forget everything.
 </p>
 
-<button onclick="nextAward()" id="next">
-NEXT AWARD ➜
-</button>
+<p>
+But I want you to know something...
+Your feelings matter to me, even when I don't understand them immediately.
+</p>
+</div>
+
+<div class="card">
+<h2>Things I Never Want You To Forget 💗</h2>
+
+<p>
+You are not difficult to love.<br>
+Your feelings are not a burden.<br>
+Your tears are not meaningless.<br>
+Your past pain deserves to be heard.<br>
+And you deserve honesty, respect and peace.
+</p>
+</div>
+
+<div class="card">
+<h2>My Little Promises 🤍</h2>
+
+<p>
+♡ I will choose honesty over hiding things.<br><br>
+♡ I will listen instead of getting defensive.<br><br>
+♡ I will respect your feelings, even during arguments.<br><br>
+♡ I will not expect instant forgiveness.<br><br>
+♡ I will show my change through consistent actions.
+</p>
+</div>
+
+<div class="card">
+<h2>A Little Memory 🌸</h2>
+
+<p>
+Out of all the little things in this world,
+your smile is something I never want to take for granted.
+
+Your love is not something I want to win for seven days.
+I want to become someone who treats it carefully every day.
+</p>
+</div>
+
+<div class="card">
+<h2>Open Your Little Surprise 🎁</h2>
+
+<button onclick="showMessage()">Tap Here, Sadaa ❤️</button>
+
+<div class="hidden" id="surprise">
+<p>
+If I could give you one thing,
+it would be the ability to see yourself through my eyes.
+
+You would understand how special you are,
+how beautiful your heart is,
+and how much you deserve to be loved correctly.
+
+I'm sorry for the times I made you feel otherwise. ❤️
+</p>
+</div>
+</div>
+
+<div class="card">
+<h2>One Last Thing 🥺</h2>
+
+<p>
+I cannot change yesterday.
+I cannot demand your trust.
+I cannot force your heart to heal.
+
+But I can take responsibility for my actions,
+be patient with your healing,
+and keep showing you that my words mean something.
+
+No pressure. No deadlines.
+Just genuine effort.
+</p>
+</div>
+
+<h2>With love, always ❤️</h2>
+<p>— Talha</p>
 
 </div>
 
-<footer>THE SADAA AWARDS 2026</footer>
-
-</section>
-
-
-<!-- FINAL -->
-
-<section class="screen hidden" id="final">
-
-<div class="trophy">🏆</div>
-
-<h1>AND THE FINAL AWARD...</h1>
-
-<h2>THE ONE & ONLY AWARD 💎</h2>
-
-<div class="card">
-
-<p>
-This award cannot be given to anyone else.
-Because there's only one Sadaa.
-</p>
-
-<h1>YOU ARE SPECIAL ❤️</h1>
-
-<p>
-I know awards cannot express everything.
-I just wanted to create a little moment
-where you feel celebrated.
-
-You deserve appreciation not just today,
-but on ordinary days too.
-
-I know I have made mistakes.
-I won't ask you to forget them.
-I want to show through my actions
-that I can do better.
-
-You don't have to be perfect.
-You don't have to smile all the time.
-
-Just keep being yourself.
-
-With love,<br>
-<strong>Talha ❤️</strong>
-</p>
-
-</div>
-
-<button onclick="location.reload()">WATCH AGAIN ✨</button>
-
-</section>
-
+<footer>
+A little website, a sincere heart, and a promise to do better. 🌷
+</footer>
 
 <script>
-
-const awards=[
-
-{
-icon:"👑",
-title:"QUEEN OF MY WORLD",
-text:"Every queen deserves a crown. Your smile, your personality and the way you carry yourself make you truly special."
-},
-
-{
-icon:"⚽",
-title:"FOOTBALL STAR AWARD",
-text:"For your dedication, passion and hard work. Never stop chasing your football dreams. I am proud of you!"
-},
-
-{
-icon:"🧠",
-title:"GENIUS GIRL AWARD",
-text:"For that brilliant mind! Your dedication towards studies is something worth appreciating. Keep shining, Sadaa."
-},
-
-{
-icon:"😂",
-title:"ANGRY BIRD AWARD",
-text:"For being the cutest angry person ever! Even your little angry moments are part of what makes you YOU."
-},
-
-{
-icon:"🌷",
-title:"BEAUTIFUL SOUL AWARD",
-text:"For your caring heart, your kindness and the little things that make your personality beautiful."
-},
-
-{
-icon:"💎",
-title:"RARE DIAMOND AWARD",
-text:"Because people like you aren't ordinary. Never underestimate your own worth. You are one of a kind."
-},
-
-{
-icon:"🧸",
-title:"BEST SMILE AWARD",
-text:"For a smile that deserves to be celebrated every single day. Never stop smiling for yourself."
+function showMessage() {
+    document.getElementById("surprise").style.display = "block";
 }
 
-];
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*20) + "px";
+    document.body.appendChild(heart);
 
-let current=0;
-
-function confetti(){
-
-for(let i=0;i<35;i++){
-
-let piece=document.createElement("div");
-
-piece.className="piece";
-
-piece.innerHTML=["✨","💛","🌟","🎉","💖"][Math.floor(Math.random()*5)];
-
-piece.style.left=Math.random()*100+"vw";
-
-piece.style.animationDuration=(2+Math.random()*3)+"s";
-
-document.getElementById("confetti").appendChild(piece);
-
-setTimeout(()=>piece.remove(),5000);
-
+    setTimeout(() => heart.remove(), 6000);
 }
 
-}
-
-function start(){
-
-document.getElementById("intro").style.display="none";
-
-document.getElementById("awardScreen").style.display="flex";
-
-showAward();
-
-confetti();
-
-}
-
-function showAward(){
-
-let a=awards[current];
-
-document.getElementById("number").innerText=
-"AWARD "+String(current+1).padStart(2,"0")+" / 07";
-
-document.getElementById("icon").innerText=a.icon;
-
-document.getElementById("awardTitle").innerText=a.title;
-
-document.getElementById("awardText").innerText=a.text;
-
-confetti();
-
-}
-
-function nextAward(){
-
-current++;
-
-if(current<awards.length){
-
-showAward();
-
-}else{
-
-document.getElementById("awardScreen").style.display="none";
-
-document.getElementById("final").classList.remove("hidden");
-
-confetti();
-
-}
-
-}
-
+setInterval(createHeart, 700);
 </script>
 
 </body>
