@@ -1,205 +1,358 @@
-``html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sadaa's Little Love World 💗</title>
+<title>The Sadaa Awards 2026</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
 margin:0;
 font-family:Georgia,serif;
+background:radial-gradient(circle,#332044,#100b19);
+color:white;
 text-align:center;
-color:#873d65;
-background:linear-gradient(135deg,#ffe4ef,#f1e4ff,#fff1f5);
+min-height:100vh;
 overflow-x:hidden;
 }
-header{padding:55px 15px 25px}
-h1{font-size:35px;color:#d34d88}
-h2{color:#d34d88}
-p{line-height:1.8}
-.card{
-background:rgba(255,255,255,.8);
-border-radius:25px;
-padding:25px 18px;
-margin:25px auto;
-max-width:450px;
-width:90%;
-box-shadow:0 8px 25px #d88caf40;
+
+.screen{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:25px;
 }
+
+h1{
+color:#ffd982;
+font-size:38px;
+text-shadow:0 0 20px #ffbd59;
+}
+
+h2{color:#ffdc94}
+
+p{
+font-size:17px;
+line-height:1.7;
+}
+
 button{
+background:linear-gradient(45deg,#d99a35,#ffe5a3);
+color:#321d16;
 border:0;
+padding:14px 30px;
 border-radius:30px;
-background:#e879a6;
-color:white;
-padding:13px 22px;
 font-size:16px;
-margin:10px;
+font-weight:bold;
+margin:12px;
 cursor:pointer;
+box-shadow:0 0 20px #e9ae55;
 }
-button:active{transform:scale(.95)}
-.reason{
-background:#fff0f6;
-padding:12px;
-border-radius:15px;
-margin:10px 0;
+
+button:active{transform:scale(.94)}
+
+#awardScreen{display:none}
+
+.trophy{
+font-size:95px;
+animation:float 2s infinite ease-in-out;
+filter:drop-shadow(0 0 20px gold);
 }
-.hidden{display:none}
-.big{font-size:55px}
-footer{padding:30px}
-.floating{
+
+@keyframes float{
+50%{transform:translateY(-15px)}
+}
+
+.card{
+background:#ffffff12;
+border:1px solid #ffdb9a66;
+border-radius:25px;
+padding:30px 20px;
+max-width:440px;
+width:100%;
+box-shadow:0 0 30px #ffbd5920;
+}
+
+.number{
+color:#ffd982;
+letter-spacing:4px;
+font-size:13px;
+}
+
+#awardTitle{
+font-size:29px;
+margin:20px 0;
+color:#ffdc94;
+}
+
+#awardText{
+min-height:100px;
+}
+
+#confetti{
 position:fixed;
-top:-30px;
+inset:0;
 pointer-events:none;
-animation:fall linear forwards;
-z-index:5;
+overflow:hidden;
 }
+
+.piece{
+position:absolute;
+top:-20px;
+font-size:20px;
+animation:fall 4s linear forwards;
+}
+
 @keyframes fall{
-to{transform:translateY(110vh) rotate(360deg);opacity:0}
+to{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+.hidden{display:none!important}
+
+footer{
+color:#d8bca0;
+font-size:13px;
+margin-top:25px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="big">🎀🦋</div>
-<h1>Sadaa's Little Love World</h1>
-<p>A tiny universe made only for my favourite girl ❤️</p>
-<p>୨ৎ Made with love by Talha ୨ৎ</p>
-</header>
+<div id="confetti"></div>
 
-<section class="card">
-<div class="big">🧸</div>
-<h2>Welcome, My Sadaa!</h2>
+<!-- OPENING -->
+
+<section class="screen" id="intro">
+
+<div class="trophy">🏆</div>
+
+<h1>THE SADAA AWARDS</h1>
+
+<h2>2026 EDITION</h2>
+
 <p>
-Hey my little princess! 🥹<br>
-I made this tiny world just for you.
-I hope every little thing here makes you smile.
-You deserve all the happiness in this world. 💗
+Tonight is not an ordinary night.<br>
+Tonight, someone very special<br>
+deserves to be celebrated.
 </p>
+
+<p style="color:#ffd982">
+And that someone is YOU, Sadaa. ❤️
+</p>
+
+<button onclick="start()">START THE CEREMONY ✨</button>
+
+<footer>Presented with love by Talha</footer>
+
 </section>
 
-<section class="card">
-<h2>🎀 20 Reasons I Love You</h2>
-<div id="reasons"></div>
+
+<!-- AWARDS -->
+
+<section class="screen" id="awardScreen">
+
+<div class="card">
+
+<div class="number" id="number">AWARD 01 / 07</div>
+
+<div class="trophy" id="icon">👑</div>
+
+<h2>THE WINNER IS...</h2>
+
+<h1 style="font-size:30px">SADAA ❤️</h1>
+
+<h2 id="awardTitle">Queen of My World</h2>
+
+<p id="awardText">
+The girl who deserves her own crown.
+</p>
+
+<button onclick="nextAward()" id="next">
+NEXT AWARD ➜
+</button>
+
+</div>
+
+<footer>THE SADAA AWARDS 2026</footer>
+
 </section>
 
-<section class="card">
-<div class="big">💌</div>
-<h2>Open When You Miss Me</h2>
-<button onclick="reveal('miss')">Open your letter 💗</button>
-<div id="miss" class="hidden">
+
+<!-- FINAL -->
+
+<section class="screen hidden" id="final">
+
+<div class="trophy">🏆</div>
+
+<h1>AND THE FINAL AWARD...</h1>
+
+<h2>THE ONE & ONLY AWARD 💎</h2>
+
+<div class="card">
+
 <p>
-If you are missing me right now,
-imagine me giving you the biggest hug.
-Distance or silence can never change
-how special you are to me.
-I wish I could be beside you right now.
-Sending you endless hugs and kisses. 🥹❤️
+This award cannot be given to anyone else.
+Because there's only one Sadaa.
 </p>
-</div>
-</section>
 
-<section class="card">
-<div class="big">🌷</div>
-<h2>A Flower Just For You</h2>
-<p>Because even flowers are jealous of your beauty. 🌸</p>
-<button onclick="reveal('flower')">Receive your flowers</button>
-<div id="flower" class="hidden">
-<div class="big">💐🌷🌸🌹💐</div>
-<p>A little bouquet for my favourite girl!</p>
-</div>
-</section>
+<h1>YOU ARE SPECIAL ❤️</h1>
 
-<section class="card">
-<div class="big">🫂</div>
-<h2>Your Virtual Hug</h2>
-<p>Need a hug? Here is one from me!</p>
-<button onclick="hug()">Tap for a hug 🥹</button>
-<div id="hug" class="hidden">
-<div class="big">🧸🫂❤️</div>
-<p>Biggest hug from your Talha!</p>
-</div>
-</section>
-
-<section class="card">
-<div class="big">🐻</div>
-<h2>A Teddy For You</h2>
-<button onclick="reveal('teddy')">Give me my teddy!</button>
-<div id="teddy" class="hidden">
-<div class="big">🧸💗</div>
-<p>This teddy will remind you that someone loves you a lot!</p>
-</div>
-</section>
-
-<section class="card">
-<div class="big">💍</div>
-<h2>One Little Question...</h2>
-<p>Will you stay my favourite person forever?</p>
-<button onclick="yes()">YES! ❤️</button>
-<button onclick="yes()">Of course! 🥹</button>
-<div id="answer" class="hidden">
-<h2>YAYYYYY! 🥹💗</h2>
-<p>Here's to more smiles, memories and beautiful days together!</p>
-</div>
-</section>
-
-<section class="card">
-<h2>My Promise To You 💗</h2>
 <p>
-I don't want to show my love only through words.
-I want to show it through patience, honesty,
-respect and little efforts every day.
-You are special to me, Sadaa.
-And I hope I keep making you feel that way.
-<br><br>
-Forever your Talha. ❤️
+I know awards cannot express everything.
+I just wanted to create a little moment
+where you feel celebrated.
+
+You deserve appreciation not just today,
+but on ordinary days too.
+
+I know I have made mistakes.
+I won't ask you to forget them.
+I want to show through my actions
+that I can do better.
+
+You don't have to be perfect.
+You don't have to smile all the time.
+
+Just keep being yourself.
+
+With love,<br>
+<strong>Talha ❤️</strong>
 </p>
+
+</div>
+
+<button onclick="location.reload()">WATCH AGAIN ✨</button>
+
 </section>
 
-<footer>
-Made with endless love for Sadiiiee 🎀<br>
-୨ৎ Talha ❤️ Sadaa ୨ৎ
-</footer>
 
 <script>
-const list=[
-"Your beautiful smile 🌸",
-"Your cute angry face 😂",
-"Your innocent heart 🥹",
-"Your caring nature 💗",
-"Your football skills ⚽",
-"Your intelligence 📚",
-"The way you laugh 😭",
-"Your beautiful eyes 👀",
-"Your little habits 🎀",
-"Your love for dosa 🥞",
-"Your pav bhaji obsession 😂",
-"The way you teach me English 📖",
-"Your determination ✨",
-"Your kindness 🌷",
-"Your cute voice 💕",
-"The way you make me smile",
-"Your hardworking nature",
-"Your presence in my life",
-"Simply because you are YOU",
-"And a million more reasons ❤️"
+
+const awards=[
+
+{
+icon:"👑",
+title:"QUEEN OF MY WORLD",
+text:"Every queen deserves a crown. Your smile, your personality and the way you carry yourself make you truly special."
+},
+
+{
+icon:"⚽",
+title:"FOOTBALL STAR AWARD",
+text:"For your dedication, passion and hard work. Never stop chasing your football dreams. I am proud of you!"
+},
+
+{
+icon:"🧠",
+title:"GENIUS GIRL AWARD",
+text:"For that brilliant mind! Your dedication towards studies is something worth appreciating. Keep shining, Sadaa."
+},
+
+{
+icon:"😂",
+title:"ANGRY BIRD AWARD",
+text:"For being the cutest angry person ever! Even your little angry moments are part of what makes you YOU."
+},
+
+{
+icon:"🌷",
+title:"BEAUTIFUL SOUL AWARD",
+text:"For your caring heart, your kindness and the little things that make your personality beautiful."
+},
+
+{
+icon:"💎",
+title:"RARE DIAMOND AWARD",
+text:"Because people like you aren't ordinary. Never underestimate your own worth. You are one of a kind."
+},
+
+{
+icon:"🧸",
+title:"BEST SMILE AWARD",
+text:"For a smile that deserves to be celebrated every single day. Never stop smiling for yourself."
+}
+
 ];
 
-document.getElementById("reasons").innerHTML=
-list.map((r,i)=>`<div class="reason">${i+1}. ${r}</div>`).join("");
+let current=0;
 
-function reveal(id){
-document.getElementById(id).style.display="block";
+function confetti(){
+
+for(let i=0;i<35;i++){
+
+let piece=document.createElement("div");
+
+piece.className="piece";
+
+piece.innerHTML=["✨","💛","🌟","🎉","💖"][Math.floor(Math.random()*5)];
+
+piece.style.left=Math.random()*100+"vw";
+
+piece.style.animationDuration=(2+Math.random()*3)+"s";
+
+document.getElementById("confetti").appendChild(piece);
+
+setTimeout(()=>piece.remove(),5000);
+
 }
-function hug(){
-reveal('hug');
+
 }
-function yes(){
-reveal('answer');
+
+function start(){
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("awardScreen").style.display="flex";
+
+showAward();
+
+confetti();
+
 }
-function floating(){
-let el=document.createElement("
+
+function showAward(){
+
+let a=awards[current];
+
+document.getElementById("number").innerText=
+"AWARD "+String(current+1).padStart(2,"0")+" / 07";
+
+document.getElementById("icon").innerText=a.icon;
+
+document.getElementById("awardTitle").innerText=a.title;
+
+document.getElementById("awardText").innerText=a.text;
+
+confetti();
+
+}
+
+function nextAward(){
+
+current++;
+
+if(current<awards.length){
+
+showAward();
+
+}else{
+
+document.getElementById("awardScreen").style.display="none";
+
+document.getElementById("final").classList.remove("hidden");
+
+confetti();
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
